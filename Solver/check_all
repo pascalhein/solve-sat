@@ -1,0 +1,7 @@
+	for file in $1/*.cnf ;
+	do
+	echo "$file";
+	$2 $file | grep -P "^s";
+#	./check_uf.py $file | grep -v -P "^000";
+	done
+exit 0

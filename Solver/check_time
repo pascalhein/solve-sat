@@ -1,0 +1,5 @@
+for file in $1/*.cnf ;
+do
+./check_uf.py $file $2 | grep -vP "^000";
+done
+/usr/bin/time -f '%U' ./check_all $1 $2
